@@ -53,8 +53,8 @@ void trot(){
         pwm.setPWM(LEFTBACK2, 0, angleToPulse(45-k) );
         pwm.setPWM(RIGHTFRONT2, 0, angleToPulse(135-k) );
         if (k>=25){
-          pwm.setPWM(LEFTBACK2, 0, angleToPulse(45-k) );
-          pwm.setPWM(RIGHTFRONT2, 0, angleToPulse(135-k) );
+          pwm.setPWM(LEFTBACK2, 0, angleToPulse(45) );
+          pwm.setPWM(RIGHTFRONT2, 0, angleToPulse(135) );
           i=0;
         }
       }
