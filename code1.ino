@@ -46,14 +46,22 @@ void trot(){
     pwm.setPWM(LEFTFRONT2, 0, angleToPulse(45-i) );
     pwm.setPWM(RIGHTBACK2, 0, angleToPulse(135+i) );
     if (i>=25){
+      pwm.setPWM(LEFTFRONT2, 0, angleToPulse(45) );
+      pwm.setPWM(RIGHTBACK2, 0, angleToPulse(135) );
+      k=0;
       for (k=0;  k<25; k+5){
         pwm.setPWM(LEFTBACK2, 0, angleToPulse(45-k) );
         pwm.setPWM(RIGHTFRONT2, 0, angleToPulse(135-k) );
+        if (k>=25){
+          pwm.setPWM(LEFTBACK2, 0, angleToPulse(45-k) );
+          pwm.setPWM(RIGHTFRONT2, 0, angleToPulse(135-k) );
+          i=0;
+        }
       }
     }
   }
-  i=0;
-  k=0;
+  
+  
 }
 void loop() {
     standby();
